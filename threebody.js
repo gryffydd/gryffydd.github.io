@@ -18,6 +18,9 @@ function setup() {
     createCanvas(c_width, c_height);
     background(0);
     bodies = new Bodies();
+    bodies.bodies[0].color = color(255, 0, 0, 204);
+    bodies.bodies[1].color = color(0, 255, 0, 204);
+    bodies.bodies[2].color = color(0, 0, 255, 204);
 }
 
 function draw() {
