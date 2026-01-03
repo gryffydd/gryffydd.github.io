@@ -16,7 +16,7 @@
  * two-dimensional array `(index = y * width + x)`.
  */
 
-var WIDTH = 80;
+var WIDTH = 160;
 var HEIGHT = 80;
 var CELL_SIZE = 10;
 var TIC = 0;
