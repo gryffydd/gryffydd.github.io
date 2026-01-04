@@ -24,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-    // background(color(0, 0, 0, 5));
+    background(color(0, 0, 0, 5));
 
     bodies.display();
     bodies.move();
@@ -97,6 +97,7 @@ let Bodies = function() {
     this.move = function() {
         for (let i = 0; i < this.bodies.length; i++) {
             this.bodies[i].move();
+            this.bodies[i].drag();
         }
     }
 }
@@ -119,6 +120,11 @@ let Body = function() {
     this.move = function() {
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
+    }
+
+    this.drag  = function() {
+        let d = 1 - min(max((this.position.mag() / SPACE) - 1, 0) ** 2, 0.1)
+        this.velocity.mult(d)
     }
 }
 
